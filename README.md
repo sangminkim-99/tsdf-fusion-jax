@@ -1,3 +1,28 @@
+# TSDF Fusion with JAX
+
+This repository contains a TSDF (Truncated Signed Distance Function) volume integration implementation using **JAX** for high-performance GPU acceleration.
+
+> **Implemented in JAX, running on RTX 4090 with up to 150 FPS performance.**
+
+
+## Requirements
+
+```shell
+pip install --upgrade pip
+
+# NVIDIA CUDA 12 installation
+# Note: wheels only available on linux.
+pip install --upgrade "jax[cuda12]"
+```
+
+## Demo
+
+```shell
+python demo_jax.py
+```
+
+---
+
 # Volumetric TSDF Fusion of RGB-D Images in Python
 
 <img src="images/fusion-movie.gif" height=250px align="right"/>
