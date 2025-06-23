@@ -42,11 +42,11 @@ if __name__ == "__main__":
     print(f"Average FPS: {fps:.2f}")
 
     print("Saving mesh to mesh.ply...")
-    verts, faces, norms, colors = measure.marching_cubes(
+    verts, faces, norms, vals = measure.marching_cubes(
         np.array(tsdf_vol.tsdf_vol), level=0
     )
+    verts_ind = np.round(verts).astype(int)
     verts = verts * tsdf_vol.voxel_size + np.array(tsdf_vol.vol_origin)
-    verts_ind = np.round(verts / tsdf_vol.voxel_size).astype(int)
     rgb_vals = np.array(tsdf_vol.color_vol)[
         verts_ind[:, 0], verts_ind[:, 1], verts_ind[:, 2]
     ]
